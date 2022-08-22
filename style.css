@@ -1,0 +1,262 @@
+/*# Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Strong cyan: hsl(172, 67%, 45%)
+
+### Neutral
+
+- Very dark cyan: hsl(183, 100%, 15%)
+- Dark grayish cyan: hsl(186, 14%, 43%)
+- Grayish cyan: hsl(184, 14%, 56%)
+- Light grayish cyan: hsl(185, 41%, 84%)
+- Very light grayish cyan: hsl(189, 41%, 97%)
+- White: hsl(0, 0%, 100%)
+
+## Typography
+
+### Body Copy
+
+- Font size (form inputs): 24px
+
+### Font
+
+- Family: [Space Mono](https://fonts.google.com/specimen/Space+Mono)
+- Weights: 700
+
+*/
+:root{
+  --strongCyan: hsl(172, 67%, 45%);
+  --veryDarkCyan: hsl(183, 100%, 15%);
+  --darkGrayishCyan: hsl(186, 14%, 43%);
+  --grayishCyan: hsl(184, 14%, 56%);
+  --lightGrayishCyan: hsl(185, 41%, 84%);
+  --veryLightGrayishCyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  --size : 24px;
+  --weight : 700;
+  --radiusSmall : 5px;
+  --radiusMed : 15px;
+  --radiusBig : 25px;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family: 'Space Mono', monospace;
+}
+
+body{
+  background-color: var(--lightGrayishCyan);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.main{
+  background-color: var(--white);
+  margin-top: 70px;
+  display: flex;
+  padding: 25px;
+  border-radius: var(--radiusBig);
+  width: 90%;
+  max-width: 1000px;
+}
+
+.form{
+  color: var(--grayishCyan);
+  width: 50%;
+  padding-right:30px;
+  padding-bottom: 30px;
+}
+
+.billWrap, .tipWrap, .personWrap{
+  display: flex;
+  flex-direction: column;
+}
+
+.tipChoice, input{
+  font-size: var(--size);
+  height: 40px;
+  border-radius: var(--radiusSmall);
+}
+
+#customInput{
+  display: none;
+}
+
+#custom:checked ~ #customButton{
+  display: none;
+}
+
+#custom:checked ~ #customInput{
+  display: block;
+}
+
+#customButton{
+  background-color: var(--veryLightGrayishCyan);
+  color: var(--grayishCyan);
+}
+
+#customInput{
+  cursor: text;
+  width: 100%;
+}
+
+input{
+  text-align: right !important ;
+  color: var(--veryDarkCyan) !important;
+  outline: none;
+  border: 1px solid transparent;
+  background-color: var(--veryLightGrayishCyan) !important;
+  
+}
+
+input:focus{
+  border:2px solid var(--strongCyan);
+}
+
+input[type="radio"]{
+  display: none;
+}
+
+input[type="radio"]:checked + label{
+  background-color: var(--strongCyan);
+  color: var(--veryDarkCyan);
+
+}
+
+#peopleInput, #billInput{
+  padding-left:30px;
+}
+
+.personWrap, .billWrap{
+  position: relative;
+}
+
+.billWrap, .tipWrap{
+  margin-bottom: 30px;
+}
+
+.person, .dollar{
+  position: absolute;
+  bottom: 12px;
+  left: 15px;
+}
+
+.tipChoices{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.tipChoice{
+  text-align: center;
+  background-color: var(--veryDarkCyan);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.tipChoice:hover{
+  background-color: var(--lightGrayishCyan);
+  color: var(--veryDarkCyan);
+}
+
+.resultWrap{
+  background-color: var(--veryDarkCyan);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  border-radius: var(--radiusMed);
+  padding: 30px;
+}
+
+.resultWrap h2{
+  color: var(--strongCyan);
+  font-size: 30px;
+  margin-left: 20px;
+  word-break: break-all;
+  text-align: right;
+}
+
+.resultWrap button{
+  border: none;
+  cursor: pointer;
+  background-color: var(--strongCyan);
+  height: 40px;
+  border-radius: var(--radiusSmall);
+  color: var(--veryDarkCyan);
+  font-size: 20px;
+}
+
+.resultWrap button:hover{
+  background-color: var(--lightGrayishCyan);
+}
+
+
+.personTipWrap, .totalTipWrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+
+}
+
+.text p{
+  color: var(--white);
+}
+
+.text span{
+  color: var(--grayishCyan);
+  font-size: 12px;
+}
+
+@media screen and (max-width:800px){
+  .logo{
+    margin-top: 30px;
+  }
+  .main{
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+    
+  }
+  .form{
+    width: 100%;
+    padding-right: 0;
+  }
+  .resultWrap{
+    width: 100%;
+  }
+  
+}
+
+@media screen and (max-width:500px) {
+  .tipChoices{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+.attribution { 
+  margin-top:50px;
+  font-size: 11px; 
+  text-align: center;
+}
+.attribution a { 
+  color: hsl(228, 45%, 44%);
+}

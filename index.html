@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./scripts/main.js" defer type="module"></script>
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <img src="./images/logo.svg" alt="logo" class="logo" />
+    <div class="main">
+      <form action="" class="form">
+        <div class="billWrap">
+          <label for="billInput">Bill</label>
+          <input type="number" id="billInput" placeholder="0" />
+          <img
+            src="./images/icon-dollar.svg"
+            alt="dollar-icon"
+            class="dollar"
+          />
+        </div>
+        <div class="tipWrap">
+          <label for="tip">Select Tip %</label>
+          <div class="tipChoices">
+            <input type="radio" name="tip" id="5" value="5" />
+            <label class="tipChoice" for="5">5%</label>
+            <input type="radio" name="tip" id="10" value="10" />
+            <label class="tipChoice" for="10">10%</label>
+            <input type="radio" name="tip" id="15" value="15" />
+            <label class="tipChoice" for="15">15%</label>
+            <input type="radio" name="tip" id="25" value="25" />
+            <label class="tipChoice" for="25">25%</label>
+            <input type="radio" name="tip" id="50" value="50" />
+            <label class="tipChoice" for="50">50%</label>
+            <input type="radio" name="tip" id="custom" value="custom" />
+            <label class="tipChoice" for="custom" id="customButton"
+              >Custom</label
+            >
+            <input
+              type="number"
+              id="customInput"
+              class="tipChoice"
+              placeholder="1"
+              value="1"
+            />
+          </div>
+        </div>
+        <div class="personWrap">
+          <label for="peopleInput">Number of People</label>
+          <input type="number" id="peopleInput" placeholder="1" value="1" />
+          <img
+            src="./images/icon-person.svg"
+            alt="person-icon"
+            class="person"
+          />
+        </div>
+      </form>
+      <div class="resultWrap">
+        <div>
+          <div class="personTipWrap">
+            <div class="text">
+              <p>Tip Amount</p>
+              <span>/person</span>
+            </div>
+            <h2>$<span id="tipPerPerson">0.00</span></h2>
+          </div>
+          <div class="totalTipWrap">
+            <div class="text">
+              <p>Total</p>
+              <span>/person</span>
+            </div>
+            <h2>$<span id="tipTotal">0.00</span></h2>
+          </div>
+        </div>
+        <button>RESET</button>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/younessoub">Youness</a>.
+    </div>
+  </body>
+</html>
